@@ -34,16 +34,32 @@ const Board = () => {
 
     const gameWinner = checkWinner(newSquares);
     setWinner(gameWinner);
+
+    if (gameWinner) {
+        setWinner(gameWinner);
+        setIsRunning(false);
+    }
+      
   };
 
   const resetGame = () => {
     setSquares(Array(9).fill(null));
     setIsXNext(true);
     setWinner(null);
+    setTime(0);
+    setIsRunning(true);
   };
 
- 
-  
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(true);
+
+  React.useEffect(() => {
+    let timer;
+    if (isRunning) {
+      timer = setInterval(() => setTime((prev) => prev + 1), 1000);
+    }
+    return () => clearInterval(timer);
+  }, [isRunning]);
 
   return (
       <div>
@@ -53,6 +69,7 @@ const Board = () => {
           ))}
         </div>
         {winner && <h2>{winner === "Draw" ? "It's a Draw!" : `Winner: ${winner}`}</h2>}
+        <p>Time Elapsed: {time} seconds</p>
         <button className="reset" onClick={resetGame}>Restart</button>
       </div>
 
