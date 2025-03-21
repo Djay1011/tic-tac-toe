@@ -36,14 +36,30 @@ const Board = () => {
     setWinner(gameWinner);
   };
 
+  const resetGame = () => {
+    setSquares(Array(9).fill(null));
+    setIsXNext(true);
+    setWinner(null);
+  };
+
+ 
+  
+
   return (
-      <div className="board">
-        {squares.map((square, index) => (
-          <Square key={index} value={square} onClick={() => handleClick(index)} />
-        ))}
+      <div>
+        <div className="board">
+          {squares.map((square, index) => (
+            <Square key={index} value={square} onClick={() => handleClick(index)} />
+          ))}
+        </div>
+        {winner && <h2>{winner === "Draw" ? "It's a Draw!" : `Winner: ${winner}`}</h2>}
+        <button className="reset" onClick={resetGame}>Restart</button>
       </div>
+
   );
+
 };
+
 
 
 

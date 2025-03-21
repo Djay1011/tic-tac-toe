@@ -18,4 +18,19 @@
     cursor: pointer;
     border: 1px solid #000;
   }
+
+  .reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .reset:hover {
+    background: #0056b3;
+  }
   
