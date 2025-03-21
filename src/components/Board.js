@@ -32,7 +32,8 @@ const Board = () => {
     setSquares(newSquares);
     setIsXNext(!isXNext);
 
-
+    const gameWinner = checkWinner(newSquares);
+    setWinner(gameWinner);
   };
 
   return (
