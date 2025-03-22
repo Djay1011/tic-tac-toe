@@ -5,9 +5,7 @@ function App() {
   const [playerX, setPlayerX] = useState("Player X");
   const [playerO, setPlayerO] = useState("Player O");
   const [gameStarted, setGameStarted] = useState(false);
-  const [scoreX, setScoreX] = useState(0);
-  const [scoreO, setScoreO] = useState(0);
-
+  const [isSinglePlayer, setIsSinglePlayer] = useState(false);
 
   return (
     <div className="game">
@@ -26,10 +24,14 @@ function App() {
             value={playerO}
             onChange={(e) => setPlayerO(e.target.value)}
           />
+          <select onChange={(e) => setIsSinglePlayer(e.target.value === "AI")}>
+            <option value="2P">Two Players</option>
+            <option value="AI">Play Against AI</option>
+          </select>
           <button onClick={() => setGameStarted(true)}>Start Game</button>
         </div>
       ) : (
-        <Board playerX={playerX} playerO={playerO} scoreX={scoreX} scoreO={scoreO} setScoreX={setScoreX} setScoreO={setScoreO} />
+        <Board playerX={playerX} playerO={isSinglePlayer ? "AI" : playerO} isSinglePlayer={isSinglePlayer} />
       )}
     </div>
   );
