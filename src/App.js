@@ -5,6 +5,7 @@ function App() {
   const [playerX, setPlayerX] = useState("");
   const [playerO, setPlayerO] = useState("");
   const [gameStarted, setGameStarted] = useState(false);
+  
 
   return (
     <div className="game">
