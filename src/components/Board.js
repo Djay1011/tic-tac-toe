@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Square from "./Square";
+import { motion } from "framer-motion";
 
 const Board = ({ playerX, playerO, isSinglePlayer }) => {
   const [squares, setSquares] = useState(Array(9).fill(null));
@@ -7,6 +8,7 @@ const Board = ({ playerX, playerO, isSinglePlayer }) => {
   const [winner, setWinner] = useState(null);
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
+  
 
   const checkWinner = (squares) => {
     const winningCombos = [
@@ -88,9 +90,22 @@ const Board = ({ playerX, playerO, isSinglePlayer }) => {
           <Square key={index} value={square} onClick={() => handleClick(index)} />
         ))}
       </div>
-      {winner && <h2>{winner === "Draw" ? "It's a Draw!" : `Winner: ${winner === "X" ? playerX : playerO}`}</h2>}
+      {winner && (
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }} >
+          {winner === "Draw" ? "It's a Draw!" : `Winner: ${winner === "X" ? playerX : playerO}`}
+        </motion.h2>
+      )}
       <p>Time Elapsed: {time} seconds</p>
-      <button className="reset" onClick={resetGame}>Restart</button>
+      <motion.button
+        className="reset"
+        onClick={resetGame}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}>
+        Restart Game
+      </motion.button>
     </div>
   );
 };
