@@ -6,6 +6,8 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
   const [winner, setWinner] = useState(null);
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(true);
 
   const checkWinner = (squares) => {
     const winningCombos = [
@@ -50,8 +52,7 @@ const Board = () => {
     setIsRunning(true);
   };
 
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(true);
+  
 
   React.useEffect(() => {
     let timer;
@@ -76,8 +77,5 @@ const Board = () => {
   );
 
 };
-
-
-
 
 export default Board;
