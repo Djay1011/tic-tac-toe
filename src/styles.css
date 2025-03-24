@@ -103,6 +103,28 @@ p {
   background: #c70039;
 }
 
+/* Splash Screen */
+.splash-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Title Animation */
+.title-container {
+  font-size: 3rem;
+  color: #ffcc00;
+  text-shadow: 2px 2px 10px rgba(255, 255, 0, 0.7);
+  display: flex;
+  gap: 5px;
+}
+
+
 /* Mobile Responsive */
 @media (max-width: 600px) {
   .board {

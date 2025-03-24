@@ -30,9 +30,9 @@ const Board = ({ playerX, playerO, isSinglePlayer }) => {
     if (squares[index] || winner) return;
 
     const newSquares = squares.slice();
-    newSquares[index] = "X";
+    newSquares[index] = isXNext ? "X" : "O";
     setSquares(newSquares);
-    setIsXNext(false);
+    setIsXNext(!isXNext);
 
     const gameWinner = checkWinner(newSquares);
     if (gameWinner) {

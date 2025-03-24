@@ -1,40 +1,46 @@
-import React, { useState } from "react";
-import Board from "./components/Board";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import PlayerInput from "./components/PlayerInput"; // Player name input component
+ f
 
-function App() {
-  const [playerX, setPlayerX] = useState();
-  const [playerO, setPlayerO] = useState();
-  const [gameStarted, setGameStarted] = useState(false);
-  const [isSinglePlayer, setIsSinglePlayer] = useState(false);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    // Hide splash screen after full animation (4 seconds total)
+    const timer = setTimeout(() => setShowSplash(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Animation for letters appearing one by one
+  const letterAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
 
   return (
-    <div className="game">
-      {!gameStarted ? (
-        <div className="player-input">
-          <h2>Enter Player Names</h2>
-          <input
-            type="text"
-            placeholder="Player X Name"
-            value={playerX}
-            onChange={(e) => setPlayerX(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Player O Name"
-            value={playerO}
-            onChange={(e) => setPlayerO(e.target.value)}
-          />
-          <select onChange={(e) => setIsSinglePlayer(e.target.value === "AI")}>
-            <option value="2P">Two Players</option>
-            <option value="AI">Play Against AI</option>
-          </select>
-          <button onClick={() => setGameStarted(true)}>Start Game</button>
-        </div>
+    <div className="app">
+      {showSplash ? (
+        <motion.div
+          className="splash-screen"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, delay: 2.5 }} // Hold for 2 seconds
+        >
+          <motion.div className="title-container" initial="hidden" animate="visible">
+            {"Tic Tac Toe".split("").map((letter, index) => (
+              <motion.span key={index} variants={letterAnimation} transition={{ delay: index * 0.2 }}>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.div>
+        </motion.div>
       ) : (
-        <Board playerX={playerX} playerO={isSinglePlayer ? "AI" : playerO} isSinglePlayer={isSinglePlayer} />
+        <PlayerInput />
       )}
     </div>
   );
-}
+};
 
 export default App;
