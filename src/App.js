@@ -32,7 +32,7 @@ const App = () => {
             {textStage === 1 && "Tic"}
             {textStage === 2 && "Tac"}
             {textStage === 3 && "Toe"}
-            {textStage === 4 && "Tic Tac Toe"}
+            {textStage === 4 && "Tic-Tac-Toe"}
           </motion.h1>
         </motion.div>
       ) : (
