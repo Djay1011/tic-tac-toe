@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Board from "./components/Board";
 
 function App() {
-  const [playerX, setPlayerX] = useState("Player X");
-  const [playerO, setPlayerO] = useState("Player O");
+  const [playerX, setPlayerX] = useState();
+  const [playerO, setPlayerO] = useState();
   const [gameStarted, setGameStarted] = useState(false);
   const [isSinglePlayer, setIsSinglePlayer] = useState(false);
 
