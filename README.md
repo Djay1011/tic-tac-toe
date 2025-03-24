@@ -15,8 +15,8 @@ Follow these steps to run the game locally:
 
 ### **Step 1:** Clone the Repository
 ```sh
-git clone https://github.com/your-username/tic-tac-toe-react.git
-cd tic-tac-toe-react
+git clone https://github.com/Djay1011/tic-tac-toe.git
+cd tic-tac-toe
 ```
 
 ### **Step 2:** Install Dependencies
