@@ -3,14 +3,14 @@
 ## Overview
 This is a simple yet interactive **Tic-Tac-Toe** game built with **React.js**. The game allows two players to compete or play against an AI opponent. It features score tracking, player name input, and a modern UI with animations.
 
-## 🎮 Features
+## Features
 - **Two-Player Mode** – Play with a friend.
 - **Single-Player Mode** – Play against an AI opponent.
 - **Modern UI** – Stylish dark mode with animations.
 - **Player Name Input** – Customize player names.
 - **Responsive Design** – Works on mobile and desktop.
 
-## 🚀 Installation & Setup
+## Installation & Setup
 Follow these steps to run the game locally:
 
 ### **Step 1** Clone the Repository
