@@ -13,18 +13,18 @@ This is a simple yet interactive **Tic-Tac-Toe** game built with **React.js**. T
 ## Installation & Setup
 Follow these steps to run the game locally:
 
-### **Step 1** Clone the Repository
+### **Step 1:** Clone the Repository
 ```sh
 git clone https://github.com/your-username/tic-tac-toe-react.git
 cd tic-tac-toe-react
 ```
 
-### **Step 2** Install Dependencies
+### **Step 2:** Install Dependencies
 ```sh
 npm install
 ```
 
-### 3️**Step 3** Start the Game
+### **Step 3:** Start the Game
 ```sh
 npm start
 ```
