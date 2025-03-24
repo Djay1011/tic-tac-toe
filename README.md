@@ -51,10 +51,10 @@ This will start a local development server at `http://localhost:3000/`.
 ## License
 This project is open-source under the **MIT License**.
 
----
-
 ## Enjoy playing Tic-Tac-Toe!
 If you liked this project, feel free to star the repo and suggest improvements!
+
+---
 
 ### Have Fun Playing Tic-Tac-Toe! 
 
